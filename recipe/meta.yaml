@@ -1,6 +1,6 @@
 {% set name = "django-pkgconf" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "822bd778238828920d6f3b458a185e8b85d1eac689dddb1e2e38ec44234359ef" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "f108550a18cf434a3f6b3ec10b6da5748eac0882c51ef7108f2b20621b918ed9" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -35,8 +35,7 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: 'Yet another application settings helper'
-  description: 
-    Yet another application settings helper
+  description: Yet another application settings helper
   doc_url: https://github.com/byashimov/django-pkgconf
   dev_url: https://github.com/byashimov/django-pkgconf
 
